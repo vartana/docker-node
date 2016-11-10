@@ -12,4 +12,4 @@ USER app
 WORKDIR $HOME/app
 
 RUN npm install && npm cache clean
-CMD ["pm2", "start", "index.js"]
+CMD ["pm2", "start", "app.js"]
