@@ -9,7 +9,7 @@ node:
 redis:
   image: redis
 mariadb:
-  image: "mariadb:latest"
+  image: "mariadb:10.1.19"
   environment:
     MYSQL_DATABASE: dataowl
     MYSQL_USER: IamOwl
