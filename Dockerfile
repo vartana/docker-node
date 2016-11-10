@@ -5,11 +5,11 @@ RUN useradd --user-group --create-home --shell /bin/false app &&\
 
 ENV HOME=/home/app
 
-COPY ./node/* $HOME/app/
+COPY ./node/* $HOME/
 RUN chown -R app:app $HOME/*
 
 USER app
-WORKDIR $HOME/app
+WORKDIR $HOME
 
 RUN npm install && npm cache clean
 CMD ["pm2", "start", "app.js"]
