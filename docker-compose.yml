@@ -1,5 +1,5 @@
 node:
-  build: ./node
+  build: .
   links:
     - "redis:redis"
     - "mariadb:mariadb"
