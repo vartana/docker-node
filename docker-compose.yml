@@ -3,6 +3,9 @@ node:
   links:
     - "redis:redis"
     - "mariadb:mariadb"
+  environment:
+    REDIS_URL: "redis://dokku-redis-dataowl:6379"
+    DATABASE_URL: "mysql://IamOwl:MaGyf2TNHyvuP4UY@mariadb:3306/dataowl"
 redis:
   image: redis
 mariadb:
