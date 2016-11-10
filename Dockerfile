@@ -12,4 +12,4 @@ USER app
 WORKDIR $HOME
 
 RUN npm install && npm cache clean
-CMD ["pm2", "start", "app.js"]
+CMD ["pm2", "start", "app.js", "--no-daemon"]
