@@ -1,7 +1,7 @@
 FROM node:4.6.1
 
 RUN useradd --user-group --create-home --shell /bin/false app &&\
-  npm install --global npm@3.7.5 pm2
+  npm install pm2 -g
 
 ENV HOME=/home/app
 
