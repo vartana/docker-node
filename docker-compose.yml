@@ -5,11 +5,11 @@ node:
     - "mariadb:mariadb"
   environment:
     PORT: "5000"
-    NODE_ENV: "development"
+    NODE_ENV: "production"
     REDIS_URL: "redis://dokku-redis-dataowl:6379"
     DATABASE_URL: "mysql://IamOwl:MaGyf2TNHyvuP4UY@mariadb:3306/dataowl"
-  ports:
-    - "9129:5000"
+  expose:
+    - "5000:5000"
 redis:
   image: redis
   expose:
@@ -25,3 +25,14 @@ mariadb:
     - "./database:/var/lib/mysql"
   expose:
     - "3306"
+nginx:
+  image: "nginx:stable"
+  volumes:
+    - "./web:/usr/share/nginx/deploy:ro"
+    - "./nginx/sites-enabled:/etc/nginx/conf.d"
+    - "./nginx/ssl:/etc/ssl"
+  links:
+    - "node:node"
+  ports:
+    - "80:80"
+    - "443:443"
