@@ -1,4 +1,4 @@
-FROM node:4.6.1
+FROM node:4.6.2
 
 RUN useradd --user-group --create-home --shell /bin/false app &&\
   npm install pm2 -g
