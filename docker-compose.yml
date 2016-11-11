@@ -9,7 +9,7 @@ node:
     REDIS_URL: "redis://dokku-redis-dataowl:6379"
     DATABASE_URL: "mysql://IamOwl:MaGyf2TNHyvuP4UY@mariadb:3306/dataowl"
   ports:
-    - "5000"
+    - "9129"
 redis:
   image: redis
   expose:
