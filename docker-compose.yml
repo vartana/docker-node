@@ -7,8 +7,12 @@ node:
     NODE_ENV: "production"
     REDIS_URL: "redis://dokku-redis-dataowl:6379"
     DATABASE_URL: "mysql://IamOwl:MaGyf2TNHyvuP4UY@mariadb:3306/dataowl"
+  expose:
+    - "1337"
 redis:
   image: redis
+  expose:
+    - "6379"
 mariadb:
   image: "mariadb:10.1.19"
   environment:
@@ -18,6 +22,8 @@ mariadb:
     MYSQL_ROOT_PASSWORD: HUIHEWjnefiwuauUIEHFuiiUHIEWFUbeifabiufa
   volumes:
     - "./database:/var/lib/mysql"
+  expose:
+    - "3306"
 nginx:
   image: "nginx:stable"
   volumes:
