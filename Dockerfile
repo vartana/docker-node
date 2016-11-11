@@ -12,6 +12,6 @@ USER app
 WORKDIR $HOME
 
 RUN npm install && npm cache clean
-CMD ["node", "app.js"]
+CMD ["node", "debug", "app.js"]
 
 EXPOSE 5000
