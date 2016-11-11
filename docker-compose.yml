@@ -28,3 +28,4 @@ nginx:
     - "node:node"
   ports:
     - "80"
+    - "443"
