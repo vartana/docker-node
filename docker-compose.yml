@@ -28,7 +28,7 @@ nginx:
   image: "nginx:stable"
   volumes:
     - "./web:/usr/share/nginx/deploy:ro"
-    - "./nginx/sites-enabled:/etc/nginx/sites-enabled"
+    - "./nginx/sites-enabled:/etc/nginx/conf.d"
     - "./nginx/ssl:/etc/ssl"
   links:
     - "node:node"
